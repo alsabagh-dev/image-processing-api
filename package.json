@@ -1,0 +1,28 @@
+{
+  "name": "image-processing-api",
+  "version": "1.0.0",
+  "description": "Udacity Adavanced Fullstack developer ND first project using Node, express, and typescript",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alsabagh-dev/image-processing-api.git"
+  },
+  "keywords": [
+    "Node",
+    "typescript",
+    "express",
+    "eslint",
+    "jasmine",
+    "Image-processing",
+    "sharp"
+  ],
+  "author": "Alsabagh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alsabagh-dev/image-processing-api/issues"
+  },
+  "homepage": "https://github.com/alsabagh-dev/image-processing-api#readme"
+}
