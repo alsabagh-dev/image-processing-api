@@ -4,11 +4,12 @@
   "description": "Udacity Adavanced Fullstack developer ND first project using Node, express, and typescript",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
     "lint": "eslint ./src --ext .ts",
     "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "start": "nodemon src/app.ts"
+    "start": "nodemon src/app.ts",
+    "jasmine": "jasmine",
+    "test": "npm run build && npm run jasmine"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
   "homepage": "https://github.com/alsabagh-dev/image-processing-api#readme",
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "@types/jasmine": "^4.0.3",
     "@types/node": "^17.0.35",
     "@types/sharp": "^0.30.2",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
@@ -45,6 +47,8 @@
   },
   "dependencies": {
     "express": "^4.18.1",
+    "jasmine": "^4.1.0",
+    "jasmine-spec-reporter": "^7.0.0",
     "sharp": "^0.30.4"
   }
 }
