@@ -57,6 +57,7 @@ const getImageFromThumbnail = async (
   const height = parseInt(req.query.height as unknown as string);
   const thumbnail = getThumbnailName(filename, width, height);
   try {
+    await readFile(path.join(__dirname, '../../assets/thumbnails/', thumbnail))
     await sendFileFromThum(thumbnail, res);
   } catch (error) {
     next();
@@ -98,14 +99,12 @@ imageRouter.get(
       path.join(__dirname, '../../assets/full/', filename + '.jpg')
     );
     const output = path.join(__dirname, '../../assets/thumbnails/', thumbnail);
-    console.log(output);
     await sharp(image)
       .resize({
         height: height,
         width: width
       })
       .toFile(output);
-
     await sendFileFromThum(thumbnail, res);
   }
 );
