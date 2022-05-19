@@ -10,7 +10,11 @@ app.use('/api/images', imageRouter);
 app.use('/api/thumb', express.static('assets/thumbnails'));
 
 app.get('/api', (req, res) => {
-  res.send('Hello, world!');
+  res.send(`
+  Welcome to Image Processing API<br>
+  You can use /api/image to resize an image<br>
+  or /api/thumb/[imageName] to use it as placeholder
+  `);
 });
 
 app.listen(port, () => {
