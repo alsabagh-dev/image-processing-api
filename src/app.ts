@@ -7,6 +7,8 @@ const port = 3000;
 // use image router
 app.use('/api/images', imageRouter);
 
+app.use('/api/thumb', express.static('assets/thumbnails'));
+
 app.get('/api', (req, res) => {
   res.send('Hello, world!');
 });
@@ -14,6 +16,5 @@ app.get('/api', (req, res) => {
 app.listen(port, () => {
   console.log(`server started at localhost:${port}`);
 });
-
 
 export default app;
