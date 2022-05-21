@@ -27,7 +27,7 @@ export const imageResize = async (config: ImageResizeConfig): Promise<void> => {
             })
             .toFile(outputImage);
     } catch (error) {
-        throw error;
+        console.error('cannot resize image');
     }
 }
 
