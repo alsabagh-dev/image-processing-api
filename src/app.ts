@@ -9,11 +9,13 @@ app.use('/api/images', imageRouter);
 
 app.use('/api/thumb', express.static('assets/thumbnails'));
 
-app.get('/api', (req: express.Request, res: express.Response): void => {
+app.get('/*', (req: express.Request, res: express.Response): void => {
     res.send(`
   Welcome to Image Processing API<br>
   You can use /api/image to resize an image<br>
   or /api/thumb/[imageName] to use it as placeholder
+  EX<br>
+  <a href="http://localhost:${port}/api/images?filename=fjord&width=500&height=200"> Exampe</a>
   `);
 });
 
