@@ -16,12 +16,12 @@ const checkIfFull = async (
         const files = await readdir(thumbPath);
         // the 'Full' dir exists and has fils
         if (files.length > 0) {
-            files.forEach((file) => {
-                if (file.slice(0.4).toLowerCase() === '.jpg') {
+            for (const file of files) {
+                if (file.slice(-4).toLowerCase() === '.jpg') {
                     // the dir exists and has atleaste an image
                     return;
                 }
-            });
+            }
             throw new Error('No images in "Full" assests');
         } else {
             throw new Error('No images in "Full" assests');
