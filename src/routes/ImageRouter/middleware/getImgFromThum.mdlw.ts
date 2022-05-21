@@ -10,7 +10,10 @@ const readFile = promisify(fs.readFile);
 const access = promisify(fs.access);
 const mkdir = promisify(fs.mkdir);
 
-const checkIfThumb = async (thumbPath: fs.PathLike, res: express.Response): Promise<void>  => {
+const checkIfThumb = async (
+    thumbPath: fs.PathLike,
+    res: express.Response
+): Promise<void> => {
     // Check if Thumbnails directory exists
     try {
         await access(thumbPath);
@@ -21,12 +24,12 @@ const checkIfThumb = async (thumbPath: fs.PathLike, res: express.Response): Prom
         } catch (createError) {
             console.error('Cannot create Thumbnails directory');
 
-            const msg = 'Sorry we are encountering some internal issue/n pleae try again later';
-            error(500, msg, res)
+            const msg =
+                'Sorry we are encountering some internal issue/n pleae try again later';
+            error(500, msg, res);
         }
     }
-}
-
+};
 
 export const getImageFromThumbnail = async (
     req: express.Request,
@@ -44,7 +47,7 @@ export const getImageFromThumbnail = async (
 
     // check if the requested image already in Thumbnails directory
     try {
-        await readFile(path.join(thumbPath, thumbnail))
+        await readFile(path.join(thumbPath, thumbnail));
         sendFileFromThum(thumbnail, res);
     } catch (error) {
         // if not continue the response process

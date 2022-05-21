@@ -1,7 +1,10 @@
-import express from "express";
+import express from 'express';
 
-export const error = (code: number, msg: string, res: express.Response): void => {
+export const error = (
+    code: number,
+    msg: string,
+    res: express.Response
+): void => {
     res.statusMessage = msg;
-    res.status(code)
-        .json(msg);
+    res.status(code).json(msg);
 };
