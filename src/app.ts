@@ -9,7 +9,7 @@ app.use('/api/images', imageRouter);
 
 app.use('/api/thumb', express.static('assets/thumbnails'));
 
-app.get('/api', (req, res) => {
+app.get('/api', (req: express.Request, res: express.Response): void => {
   res.send(`
   Welcome to Image Processing API<br>
   You can use /api/image to resize an image<br>
