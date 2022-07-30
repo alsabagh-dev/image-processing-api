@@ -1,4 +1,6 @@
 # image-processing-api
+An API that handles resizing and serving stored images. The same image can be requested with different sizes
+
 
 # Build
 npm run build
